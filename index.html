@@ -54,7 +54,54 @@
 		.nav-links a:hover {
 			color: white;
 			background-color: #ff6600;
+			text-decoration: none;
 		}
+		
+		.body {
+			font-family: 'Arial', sans-serif; /* Use a clean, sans-serif font */
+			font-size: 16px; /* Standard font size for readability */
+			line-height: 1.6; /* Improved line spacing for better readability */
+			color: #333; /* Dark gray color for less harshness than black */
+			background-color: #F7F7F7;
+			padding: 20px 50px; /* Add padding for breathing space */
+			margin: 0px; /* Remove default margin */
+		}
+
+		/* Additional styles for paragraphs */
+		p {
+			margin-bottom: 15px; /* Space between paragraphs */
+		}
+
+		/* Headings for structure and hierarchy */
+		h1, h2, h3, h4 {
+			font-family: 'Georgia', serif; /* Use a serif font for headings */
+			color: #222; /* Slightly darker color for headings */
+			margin-top: 20px; /* Add space above headings */
+		}
+
+		h1 {
+			font-size: 2em; /* Large size for main headings */
+		}
+
+		h2 {
+			font-size: 1.5em; /* Medium size for sub-headings */
+		}
+
+		h3 {
+			font-size: 1.25em; /* Smaller heading */
+		}
+
+		/* Optional: Adding a link style */
+		a {
+			color: #0056b3; /* Professional blue for links */
+			text-decoration: none; /* Remove underline for cleaner look */
+		}
+
+		a:hover {
+			text-decoration: underline; /* Underline on hover for visibility */
+			color: #003d80; /* Darker blue on hover */
+		}
+
 	</style>
 </head>
 <body>
@@ -62,31 +109,31 @@
 	<nav>
 		<div class="logo">babaissarkar</div>
 		<ul class="nav-links">
-		    <li><a href="#home">Home</a></li>
-		    <li><a href="#ssplot">SSPlot</a></li>
-		    <li><a href="#prplayer">PRPlayer</a></li>
-		    <li><a href="#bfw">Battle for Wesnoth</a></li>
-		    <li><a href="#services">Other Projects</a></li>
-		    <li><a href="#contact">Contact</a></li>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#ssplot">SSPlot</a></li>
+			<li><a href="#prplayer">PRPlayer</a></li>
+			<li><a href="#bfw">Battle for Wesnoth</a></li>
+			<li><a href="#others">Other Projects</a></li>
+			<li><a href="#contact">Contact</a></li>
 		</ul>
 	</nav>
 	
+	<div class="body">
 	<p>Hello, this is main page for all of my projects!</p>
-	<p>I currently have 5 repositories in Github :
+	<p>I currently have multiple projects in <a href="https://github.com/babaissarkar"><b>my repository</b></a>, including but not limited to:
 		<ul>
 			<li><a href="https://github.com/babaissarkar/paladin"><b>PRPlayer</b></a>, a CCG/TCG player,</li>
+			<li><a href="https://github.com/babaissarkar/ssplot"><b>SSPlot</b></a> is a 2d and 3d datafile plotter, and simple nonlinear dynamics simulator.</li>
+			<center><img src="images/ssplot_screenshot.png" width="50%"/></center>
 			<li><a href="https://github.com/babaissarkar/myfnts"><b>myfnts</b></a>, a repository for my fonts Exodia, FProject and any new ones I may be designing in the future. FProject is also available from <a href="https://fontlibrary.org/en/font/fproject">Open Font Library</a>.</li>
 			<li><a href="https://github.com/babaissarkar/math2pic"><b>math2pic</b></a> is a collection of some small scripts I have written to use LaTeX equations in Markdown documents.</li>
 			<li><a href="https://github.com/babaissarkar/prosder"><b>prosder</b></a> is a simple command driven graphics language.</li>
-			<li><a href="https://github.com/babaissarkar/ssplot">SSPlot</a> is a 2d and 3d datafile plotter, and simple nonlinear dynamics simulator.</li>
-			<center><img src="images/ssplot_screenshot.png" width="80%"/></center>
-			<li>Source of my Battle for Wesnoth campaign, <a href="https://github.com/babaissarkar/frost-mage">Journey of a Frost Mage</a>, which is available from the <a href="http://addons.wesnoth.org/1.16">Battle for Wesnoth 1.16 add-ons server</a>. The official Battle for Wesnoth forum thread is <a href="https://forums.wesnoth.org/viewtopic.php?t=57054">here</a>.</li>
 			<li>Some time ago I've also decided to create <a href="https://github.com/babaissarkar/MyOpenLab">my own fork of the MyOpenLab project</a> to make it compatible with recent versions of the Java® runtime. It also has a AppImage build of MyOpenLab with limited functionality. MyOpenLab is a visual block like programming environment, originally available from <a href="https://www.myopenlab.org">here</a>.</li>
+			<li>Source of my Battle for Wesnoth campaign, <a href="https://github.com/babaissarkar/frost-mage">Journey of a Frost Mage</a>, which is available from the <a href="http://addons.wesnoth.org/1.16">Battle for Wesnoth 1.16 add-ons server</a>. The official Battle for Wesnoth forum thread is <a href="https://forums.wesnoth.org/viewtopic.php?t=57054">here</a>.</li>
 		</ul>
 		You can look at the corresponding repositories for further information.<br/>
 		This is all for now, but let's look forward to something great!</p>
 <!--	<p>Great news! My book is now available for buying at <a href="https://www.amazon.in/dp/B0CW1BP5TL">Amazon</a>!. Buy this would be a great idea to support my work.</p>-->
 	<p>Many thanks for visiting.:)</p>
-	<a href="https://github.com/babaissarkar"><b>My Repository</b></a>
-	
+	</div>
 <html>
