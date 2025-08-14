@@ -1,139 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>babaissarkar's Main Page</title>
-	<style>
-		/* Basic reset for consistent styling */
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-
-		/* Navigation Bar styling */
-		nav {
-			background-color: #FF7D28;
-			padding: 10px 0px;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			font-family: Sans;
-		}
-
-		/* Logo styling */
-		.logo {
-			color: white;
-			font-size: 20px;
-			font-weight: bold;
-			padding: 0px 10px;
-			text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-		}
-
-		/* Nav Links styling */
-		.nav-links {
-			list-style: none;
-			display: flex;
-		}
-
-		.nav-links li {
-			margin-left: 20px;
-		}
-
-		.nav-links a {
-			color: #ddd;
-			font-weight: bold;
-			text-decoration: none;
-			font-size: 16px;
-			padding: 12px 12px;
-			text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-		}
-
-		/* Hover effect for links */
-		.nav-links a:hover {
-			color: white;
-			background-color: #ff6600;
-			text-decoration: none;
-		}
-		
-		.body {
-			font-family: 'Arial', sans-serif; /* Use a clean, sans-serif font */
-			font-size: 16px; /* Standard font size for readability */
-			line-height: 1.6; /* Improved line spacing for better readability */
-			color: #333; /* Dark gray color for less harshness than black */
-			background-color: #F7F7F7;
-			padding: 20px 50px; /* Add padding for breathing space */
-			margin: 0px; /* Remove default margin */
-		}
-
-		/* Additional styles for paragraphs */
-		p {
-			margin-bottom: 15px; /* Space between paragraphs */
-		}
-
-		/* Headings for structure and hierarchy */
-		h1, h2, h3, h4 {
-			font-family: 'Georgia', serif; /* Use a serif font for headings */
-			color: #222; /* Slightly darker color for headings */
-			margin-top: 20px; /* Add space above headings */
-		}
-
-		h1 {
-			font-size: 2em; /* Large size for main headings */
-		}
-
-		h2 {
-			font-size: 1.5em; /* Medium size for sub-headings */
-		}
-
-		h3 {
-			font-size: 1.25em; /* Smaller heading */
-		}
-
-		/* Optional: Adding a link style */
-		a {
-			color: #0056b3; /* Professional blue for links */
-			text-decoration: none; /* Remove underline for cleaner look */
-		}
-
-		a:hover {
-			text-decoration: underline; /* Underline on hover for visibility */
-			color: #003d80; /* Darker blue on hover */
-		}
-
-	</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio — Subhraman Sarkar</title>
+  <style>
+    :root {
+      --accent: #ff6a00;
+      --bg: #fff;
+      --ink: #111;
+      --muted: #555;
+      --shadow: 0 6px 16px rgba(0,0,0,0.05);
+      --radius: 10px;
+    }
+    body { margin:0; font-family:system-ui, sans-serif; color:var(--ink); background:var(--bg); }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { opacity:0.85; }
+    nav { position:sticky; top:0; background:#fff; padding:10px 20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); z-index:100; }
+    nav a { margin-right:14px; font-weight:600; }
+    section { padding:40px 20px; max-width:900px; margin:0 auto; }
+    h2 { margin-bottom:0.5em; }
+    .project-card { display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:center; margin-bottom:40px; background:#f9f9f9; border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; }
+    .project-card.alt { grid-template-columns:1fr 1fr; background:#fff; }
+    .project-card img { width:100%; border-radius:var(--radius); box-shadow:var(--shadow); }
+    .project-card h3 { margin:0 0 6px; color:var(--accent); font-size:1.4rem; }
+    .project-card p { margin:0 0 8px; color:var(--muted); }
+    .tech-stack { font-size:0.9rem; color:var(--muted); margin-bottom:6px; }
+    .card-links a { margin-right:10px; font-weight:600; font-size:0.95rem; }
+    .footer-name { position:fixed; bottom:12px; right:18px; font-size:0.85rem; opacity:0.85; background:rgba(255,255,255,0.8); padding:6px 10px; border-radius:6px; }
+    .footer-name a { color:inherit; text-decoration:none; }
+    .footer-name a:hover { text-decoration:underline; }
+  </style>
 </head>
 <body>
-	<!-- Navigation Bar -->
-	<nav>
-		<div class="logo">babaissarkar</div>
-		<ul class="nav-links">
-			<li><a href="#home">Home</a></li>
-			<li><a href="#ssplot">SSPlot</a></li>
-			<li><a href="#prplayer">PRPlayer</a></li>
-			<li><a href="#bfw">Battle for Wesnoth</a></li>
-			<li><a href="#others">Other Projects</a></li>
-			<li><a href="#contact">Contact</a></li>
-		</ul>
-	</nav>
-	
-	<div class="body">
-	<p>Hello, this is main page for all of my projects!</p>
-	<p>I currently have multiple projects in <a href="https://github.com/babaissarkar"><b>my repository</b></a>, including but not limited to:
-		<ul>
-			<li><a href="https://github.com/babaissarkar/paladin"><b>PRPlayer</b></a>, a CCG/TCG player,</li>
-			<li><a href="https://github.com/babaissarkar/ssplot"><b>SSPlot</b></a> is a 2d and 3d datafile plotter, and simple nonlinear dynamics simulator.</li>
-			<center><img src="images/ssplot_screenshot.png" width="50%"/></center>
-			<li><a href="https://github.com/babaissarkar/myfnts"><b>myfnts</b></a>, a repository for my fonts Exodia, FProject and any new ones I may be designing in the future. FProject is also available from <a href="https://fontlibrary.org/en/font/fproject">Open Font Library</a>.</li>
-			<li><a href="https://github.com/babaissarkar/math2pic"><b>math2pic</b></a> is a collection of some small scripts I have written to use LaTeX equations in Markdown documents.</li>
-			<li><a href="https://github.com/babaissarkar/prosder"><b>prosder</b></a> is a simple command driven graphics language.</li>
-			<li>Some time ago I've also decided to create <a href="https://github.com/babaissarkar/MyOpenLab">my own fork of the MyOpenLab project</a> to make it compatible with recent versions of the Java® runtime. It also has a AppImage build of MyOpenLab with limited functionality. MyOpenLab is a visual block like programming environment, originally available from <a href="https://www.myopenlab.org">here</a>.</li>
-			<li>Source of my Battle for Wesnoth campaign, <a href="https://github.com/babaissarkar/frost-mage">Journey of a Frost Mage</a>, which is available from the <a href="http://addons.wesnoth.org/1.16">Battle for Wesnoth 1.16 add-ons server</a>. The official Battle for Wesnoth forum thread is <a href="https://forums.wesnoth.org/viewtopic.php?t=57054">here</a>.</li>
-		</ul>
-		You can look at the corresponding repositories for further information.<br/>
-		This is all for now, but let's look forward to something great!</p>
-<!--	<p>Great news! My book is now available for buying at <a href="https://www.amazon.in/dp/B0CW1BP5TL">Amazon</a>!. Buy this would be a great idea to support my work.</p>-->
-	<p>Many thanks for visiting.:)</p>
-	</div>
-<html>
+
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <!-- Project 1: SSPlot -->
+    <div class="project-card">
+      <div>
+        <h3>SSPlot</h3>
+        <p class="tech-stack">Java · Swing · AppImage · Flatpak</p>
+        <p>A simple plotting utility and numerical simulator for dynamical systems. Supports CSV plotting and ODE solving.</p>
+        <div class="card-links">
+          <a href="https://github.com/babaissarkar/ssplot">GitHub</a>
+          <a href="https://flathub.org/apps/io.github.babaissarkar.ssplot">Install</a>
+        </div>
+      </div>
+      <div>
+        <img src="https://babaissarkar.github.io/images/ssplot_screenshot.png" alt="SSPlot Screenshot">
+      </div>
+    </div>
+
+    <!-- Project 2: PRPlayer -->
+    <div class="project-card alt">
+      <div>
+        <img src="https://babaissarkar.github.io/images/prplayer_screenshot.png" alt="PRPlayer Screenshot">
+      </div>
+      <div>
+        <h3>PRPlayer</h3>
+        <p class="tech-stack">Java · Swing</p>
+        <p>A collectible card game simulator designed for strategy analysis and gameplay testing.</p>
+        <div class="card-links">
+          <a href="https://github.com/babaissarkar/paladin">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3: Font Projects -->
+    <div class="project-card">
+      <div>
+        <h3>Font Projects</h3>
+        <p class="tech-stack">Python · FontForge</p>
+        <p>Custom fonts designed and generated for personal and open-source use.</p>
+        <div class="card-links">
+          <a href="https://github.com/babaissarkar/myfnts">GitHub</a>
+        </div>
+      </div>
+      <div>
+        <img src="https://babaissarkar.github.io/images/fonts_screenshot.png" alt="Font Projects Screenshot">
+      </div>
+    </div>
+
+    <!-- Project 4: math2pic -->
+    <div class="project-card alt">
+      <div>
+        <!--<img src="https://via.placeholder.com/400x300.png?text=math2pic+Screenshot" alt="math2pic Screenshot">-->
+      </div>
+      <div>
+        <h3>math2pic</h3>
+        <p class="tech-stack">Python · Bash · Perl</p>
+        <p>Convert LaTeX mathematical equations in Markdown to high-quality images.</p>
+        <div class="card-links">
+          <a href="https://github.com/babaissarkar/math2pic">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 5: Prosder -->
+    <div class="project-card">
+      <div>
+        <h3>Prosder</h3>
+        <p class="tech-stack">C · Cairo</p>
+        <p>A simple procedural (command-based) graphics system for creating vector graphics.</p>
+        <div class="card-links">
+          <a href="https://github.com/babaissarkar/prosder">GitHub</a>
+        </div>
+      </div>
+      <div>
+        <img src="https://babaissarkar.github.io/images/prosder_screenshot.png" alt="Prosder Screenshot">
+      </div>
+    </div>
+
+    <!-- Project 6: MyOpenLab Fork -->
+    <div class="project-card alt">
+      <div>
+        <img src="https://a.fsdn.com/con/app/proj/myopenlab3/screenshots/EjemploVariablesFront.png/max/max/1" alt="MyOpenLab Fork Screenshot">
+      </div>
+      <div>
+        <h3>MyOpenLab Fork</h3>
+        <p class="tech-stack">Java</p>
+        <p>A fork of the MyOpenLab project, an open-source visual programming environment for scientific applications.</p>
+        <div class="card-links">
+          <a href="https://github.com/babaissarkar/MyOpenLab">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="about">
+    <h2>Subhraman Sarkar</h2>
+    <p>Primarily a Java developer focused on building tools for scientists and creative users. Open-source enthusiast, I enjoy visualizing complex systems and building intuitive UIs.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Connect with me on <a href="https://github.com/babaissarkar">GitHub</a> or reach out via email at <a href="mailto:suvrax@gmail.com">suvrax@gmail.com</a>.</p>
+  </section>
+
+</body>
+</html>
