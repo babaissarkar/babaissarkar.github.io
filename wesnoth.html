@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Battle for Wesnoth Contributions</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f9fff9;
+        color: #222;
+    }
+    header {
+        background-color: #2a6f3f;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    .project-section {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px;
+    }
+    .project {
+        display: flex;
+        align-items: center;
+        background-color: #e8f5e9;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .project:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    .project-text {
+        flex: 1;
+        padding: 20px;
+    }
+    .project-text h2 {
+        margin-top: 0;
+        color: #2a6f3f;
+    }
+    .project-text a {
+        color: #1b5e20;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .project-text a:hover {
+        text-decoration: underline;
+    }
+    .project-image {
+        flex: 1;
+        min-height: 200px;
+        background-color: #c8e6c9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #1b5e20;
+    }
+    footer {
+        background-color: #2a6f3f;
+        color: white;
+        text-align: right;
+        padding: 10px 20px;
+    }
+    footer a {
+        color: white;
+        margin-left: 10px;
+        text-decoration: none;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Battle for Wesnoth Contributions</h1>
+</header>
+
+<div class="project-section">
+    <div class="project">
+        <div class="project-text">
+            <h2>Main Game Contributions</h2>
+            <p>Worked on the game's custom UI and scripting using C++, SDL, and Wesnoth Markup Language (WML). Also worked on the Android porting and the new theme, Celes.</p>
+            <a href="https://www.wesnoth.org/" target="_blank">Visit Battle for Wesnoth</a>
+        </div>
+        <div class="project-image"><img width="80%" src="images/wesnoth/wesnoth-1.jpg" alt="Wesnoth UI Screenshot"></div>
+    </div>
+
+    <div class="project">
+        <div class="project-text">
+            <h2>Journey of a Frost Mage</h2>
+            <p>Designed and developed my own Wesnoth campaign, using advanced WML/Lua scripting and custom assets.</p>
+            <a href="https://github.com/babaissarkar/frost-mage" target="_blank">View Campaign Source</a>
+        </div>
+        <div class="project-image"><img src="images/wesnoth/erinna.webp" alt="Wesnoth Campaign Screenshot"></div>
+    </div>
+
+    <div class="project">
+        <div class="project-text">
+            <h2>Bengali Translations</h2>
+            <p>Contributed to Wesnoth translations, improving accessibility for non-English players.</p>
+            <a href="https://github.com/babaissarkar/wesnoth-bn" target="_blank">View Translation Repo</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Subhraman Sarkar
+    <a href="https://github.com/babaissarkar" target="_blank">GitHub</a>
+</footer>
+
+</body>
+</html>

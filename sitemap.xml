@@ -21,6 +21,12 @@
   <image:image>
       <image:loc>https://babaissarkar.github.io/images/prosder_screenshot.png</image:loc>
   </image:image>
+  <image:image>
+      <image:loc>https://babaissarkar.github.io/images/wesnoth/erinna.webp</image:loc>
+  </image:image>
+  <image:image>
+      <image:loc>https://babaissarkar.github.io/images/wesnoth/wesnoth-1.jpg</image:loc>
+  </image:image>
 </url>
 
 </urlset>
