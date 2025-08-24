@@ -20,19 +20,23 @@
     }
 
     .map-container img {
-      max-width: 90vw;
+      width: 100%;
       height: auto;
       display: block;
     }
 
-    .hotspot {
+    /* Coordinate display */
+    .coords {
       position: absolute;
-      width: 20px;
-      height: 20px;
-      background: rgba(255, 165, 0, 0.8);
-      border-radius: 50%;
-      cursor: pointer;
-      transform: translate(-50%, -50%);
+      bottom: 5px;
+      right: 5px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      pointer-events: none;
+      user-select: none;
     }
     
     /* Marker style */
@@ -76,23 +80,27 @@
       font-size: 14px;
       pointer-events: none;
       display: none;
-      white-space: nowrap;
+      max-width: 200px;      /* max width for wrapping */
+      white-space: normal;    /* allow wrapping */
+      word-wrap: break-word;  /* break long words if needed */
     }
   </style>
 </head>
 <body>
 
-  <div class="map-container">
+  <div class="map-container" id="map_container">
     <!-- Replace with your map image -->
     <img src="Silver_Lands.webp" alt="Fictional Map" id="map">
   </div>
 
   <div class="tooltip" id="tooltip"></div>
   
+  <div class="coords" id="coords">X: 0, Y: 0</div>
+  
   <!--- Marker data here, origin (0,0) at top left -->
   <script id="hotspot-data" type="text/yaml">
   - name: Firecloud Peak
-    info: "Home to Firecloud Drakes"
+    info: "Home to Silver Drakes"
     top: 355px
     left: 166px
 
@@ -100,6 +108,26 @@
     info: "Major Eventide cities, now ruins"
     top: 257px
     left: 357px
+    
+  - name: Elementius School of Magic
+    info: "A grand magic academy that teaches elemental magic, located in the middle of the Silver Sea"
+    top: 410px
+    left: 757px
+    
+  - name: Emerald Forest
+    info: "Also known as Bloodleaf Forest, home to the Vampires of Xylia clan, led by Duchess Xylia."
+    top: 165px
+    left: 857px
+    
+  - name: Triththa Mountains
+    info: "Inhabited by the Dwarves of Triththa."
+    top: 535px
+    left: 414px
+    
+  - name: Ssyuriss Fenn
+    info: "A swamp home to the hyena-like Gnolls and saurian tribes."
+    top: 308px
+    left: 557px
   </script>
 
   <script>
@@ -130,6 +158,18 @@
       el.addEventListener("mouseleave", () => {
         tooltip.style.display = "none";
       });
+    });
+    
+    
+    // Coordinate display in bottom right
+    const map = document.getElementById("map_container");
+    const coords = document.getElementById("coords");
+
+    map.addEventListener("mousemove", e => {
+      const rect = map.getBoundingClientRect();
+      const x = Math.floor(e.clientX - rect.left);
+      const y = Math.floor(e.clientY - rect.top);
+      coords.textContent = `X: ${x}, Y: ${y}`;
     });
   </script>
 
