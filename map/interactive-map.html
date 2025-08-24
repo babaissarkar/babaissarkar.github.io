@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Silver Lands Interactive Map</title>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #111;
+      font-family: Arial, sans-serif;
+    }
+
+    .map-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .map-container img {
+      max-width: 90vw;
+      height: auto;
+      display: block;
+    }
+
+    .hotspot {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 165, 0, 0.8);
+      border-radius: 50%;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+    }
+    
+    /* Marker style */
+    .marker {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: radial-gradient(circle at 30% 30%, #ff5555, #cc0000);
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(255, 0, 0, 0.7);
+      cursor: pointer;
+      transform: translate(-50%, -100%); /* anchor bottom-center */
+    }
+
+    /* glowing effect on hover */
+    .marker:hover {
+      box-shadow: 0 0 12px 4px rgba(255, 100, 100, 0.9),
+                  0 0 20px 6px rgba(255, 50, 50, 0.7);
+      transform: translate(-50%, -100%) scale(1.2);
+      transition: 0.2s ease-in-out;
+    }
+
+    /* optional: small inner dot */
+    .marker::after {
+      content: "";
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      width: 50%;
+      height: 50%;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .tooltip {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      pointer-events: none;
+      display: none;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="map-container">
+    <!-- Replace with your map image -->
+    <img src="Silver_Lands.webp" alt="Fictional Map" id="map">
+  </div>
+
+  <div class="tooltip" id="tooltip"></div>
+  
+  <!--- Marker data here, origin (0,0) at top left -->
+  <script id="hotspot-data" type="text/yaml">
+  - name: Firecloud Peak
+    info: "Home to Firecloud Drakes"
+    top: 355px
+    left: 166px
+
+  - name: Noct and Diurna
+    info: "Major Eventide cities, now ruins"
+    top: 257px
+    left: 357px
+  </script>
+
+  <script>
+    const tooltip = document.getElementById("tooltip");
+    const mapContainer = document.querySelector(".map-container");
+
+    // Load YAML
+    const text = document.getElementById("hotspot-data").textContent;
+    const data = jsyaml.load(text);
+
+    // Create hotspots from YAML data
+    data.forEach(hs => {
+      const el = document.createElement("div");
+      el.className = "marker";
+      el.style.top = hs.top;
+      el.style.left = hs.left;
+      el.dataset.name = hs.name;
+      el.dataset.info = hs.info;
+      mapContainer.appendChild(el);
+
+      // Add tooltip events
+      el.addEventListener("mousemove", e => {
+        tooltip.style.display = "block";
+        tooltip.style.left = (e.pageX + 10) + "px";
+        tooltip.style.top = (e.pageY + 10) + "px";
+        tooltip.innerHTML = `<b>${hs.name}</b><br>${hs.info}`;
+      });
+      el.addEventListener("mouseleave", () => {
+        tooltip.style.display = "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
