@@ -27,7 +27,7 @@
 
     /* Coordinate display */
     .coords {
-      position: absolute;
+      position: fixed;
       bottom: 5px;
       right: 5px;
       background: rgba(0,0,0,0.7);
@@ -35,6 +35,19 @@
       padding: 4px 8px;
       border-radius: 4px;
       font-size: 14px;
+      pointer-events: none;
+      user-select: none;
+    }
+    
+    .copyright {
+      position: fixed;
+      bottom: 5px;
+      left: 5px;
+      background: rgba(0,0,0,0.7);
+      color: #ddd;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
       pointer-events: none;
       user-select: none;
     }
@@ -96,6 +109,8 @@
   <div class="tooltip" id="tooltip"></div>
   
   <div class="coords" id="coords">X: 0, Y: 0</div>
+  
+  <div class="copyright">© Copyright 2025 Subhraman Sarkar<br/>Interactive Map code under GNU GPL v2+</div>
   
   <!--- Marker data here, origin (0,0) at top left -->
   <script id="hotspot-data" type="text/yaml">
