@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Links of Light</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --crimson:#8B1A1A;
+  --crimson-mid:#B22222;
+  --crimson-bright:#DC143C;
+  --crimson-glow:#FF4444;
+  --gold:#C9A84C;
+  --gold-light:#E8D5A3;
+  --gold-dim:#7a6030;
+  --ink:#0d0608;
+  --ink-soft:#1a0c0e;
+  --ink-mid:#2a1215;
+  --parchment:#F0E8D8;
+  --parchment-dim:#C8B89A;
+  --mist:#9A8070;
+}
+body{font-family:'Georgia',serif;background:var(--ink);color:var(--parchment);line-height:1.7;}
+
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(13,6,8,0.96);
+  border-bottom:1px solid rgba(139,26,26,0.3);
+  padding:0 3rem;
+  display:flex;align-items:center;justify-content:space-between;height:52px;
+}
+.nav-brand{font-size:0.85rem;color:var(--gold);letter-spacing:0.18em;text-transform:uppercase;font-style:italic;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:0.72rem;color:var(--mist);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold-light);}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:0;
+}
+.hero-text{
+  padding:6rem 3rem 6rem 5rem;
+  display:flex;flex-direction:column;gap:1.4rem;
+}
+.hero-label{font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--crimson-bright);}
+.hero-title{font-size:clamp(2.6rem,4.5vw,4rem);font-weight:normal;line-height:1.08;color:var(--parchment);}
+.hero-title em{color:var(--gold);font-style:italic;}
+.rule{width:40px;height:1px;background:var(--gold);opacity:0.4;}
+.hero-pull{font-size:1.05rem;font-style:italic;color:var(--parchment-dim);line-height:1.85;}
+.hero-sub{font-size:0.88rem;color:var(--mist);line-height:1.8;max-width:44ch;}
+.cta-row{display:flex;gap:0.85rem;align-items:center;margin-top:0.4rem;}
+.btn-primary{
+  padding:0.6rem 1.5rem;background:var(--crimson-mid);color:var(--parchment);
+  font-family:'Georgia',serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;
+  text-decoration:none;border:1px solid var(--crimson-bright);transition:background 0.2s;
+}
+.btn-primary:hover{background:var(--crimson-bright);}
+.btn-ghost{
+  padding:0.6rem 1.5rem;background:transparent;color:var(--mist);
+  font-family:'Georgia',serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;
+  text-decoration:none;border:1px solid rgba(154,128,112,0.3);transition:all 0.2s;
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-light);}
+
+/* COVER */
+.hero-cover{
+  height:100vh;
+  position:relative;overflow:hidden;
+  border-left:1px solid rgba(139,26,26,0.2);
+}
+.hero-cover img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;
+  display:block;
+}
+.cover-veil{
+  position:absolute;inset:0;
+  background:linear-gradient(to right, var(--ink) 0%, rgba(13,6,8,0) 30%),
+             linear-gradient(to top, var(--ink) 0%, rgba(13,6,8,0) 25%);
+}
+
+/* PREMISE */
+.premise{
+  padding:5rem 5rem;
+  border-top:1px solid rgba(139,26,26,0.15);
+  display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start;
+}
+.sec-label{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--crimson-bright);margin-bottom:0.9rem;}
+.sec-title{font-size:1.75rem;font-weight:normal;color:var(--parchment);margin-bottom:1.5rem;line-height:1.2;}
+.body-text{font-size:0.92rem;color:var(--parchment-dim);line-height:1.9;}
+.body-text p+p{margin-top:0.9rem;}
+
+.aside-cards{display:flex;flex-direction:column;gap:0.8rem;padding-top:3.2rem;}
+.aside-card{
+  border-left:2px solid rgba(139,26,26,0.6);
+  padding:0.8rem 1rem;
+  background:rgba(139,26,26,0.05);
+}
+.aside-card-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:0.3rem;}
+.aside-card-text{font-size:0.82rem;color:var(--mist);line-height:1.6;}
+
+/* WORLD */
+.world{
+  padding:4rem 5rem;
+  background:var(--ink-soft);
+  border-top:1px solid rgba(139,26,26,0.15);
+  border-bottom:1px solid rgba(139,26,26,0.15);
+}
+.nations{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:rgba(139,26,26,0.15);
+  margin-top:2rem;
+}
+.nation{background:var(--ink-soft);padding:1.25rem 1rem;}
+.nation-name{font-size:0.95rem;color:var(--parchment);font-style:italic;margin-bottom:0.2rem;}
+.nation-tag{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--crimson-bright);margin-bottom:0.6rem;}
+.nation-desc{font-size:0.8rem;color:var(--mist);line-height:1.6;}
+
+/* MAGIC STRIP */
+.magic-strip{
+  padding:4rem 5rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+}
+.elements{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:1.5rem;}
+.el{
+  padding:0.55rem 0.8rem;
+  border:1px solid rgba(139,26,26,0.2);
+  font-size:0.78rem;color:var(--mist);
+}
+.el span{color:var(--gold);font-style:italic;margin-right:0.3rem;}
+.el.lost{border-color:rgba(139,26,26,0.08);color:rgba(154,128,112,0.4);font-style:italic;}
+.el.lost span{color:rgba(201,168,76,0.25);}
+.pull-quote{
+  border-left:2px solid rgba(201,168,76,0.35);
+  padding-left:1.25rem;
+  font-style:italic;font-size:0.88rem;color:var(--mist);line-height:1.8;
+  margin-top:1.5rem;
+}
+
+/* SYLVANS */
+.sylvans{
+  padding:4rem 5rem;
+  background:var(--ink-soft);
+  border-top:1px solid rgba(139,26,26,0.15);
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+}
+.sylvan-traits{display:flex;flex-direction:column;gap:0px;border:1px solid rgba(139,26,26,0.15);}
+.trait{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:0.65rem 1rem;
+  border-bottom:1px solid rgba(139,26,26,0.08);
+  font-size:0.82rem;
+}
+.trait:last-child{border-bottom:none;}
+.trait-k{color:var(--mist);}
+.trait-v{color:var(--gold-light);font-style:italic;}
+
+/* AUTHOR */
+.author{
+  padding:5rem 5rem;
+  border-top:1px solid rgba(139,26,26,0.15);
+  text-align:center;
+}
+.author-inner{max-width:560px;margin:0 auto;}
+.author-name{font-size:1.5rem;font-weight:normal;font-style:italic;color:var(--parchment);margin-bottom:0.5rem;}
+.rule-center{width:36px;height:1px;background:var(--gold);opacity:0.4;margin:0.9rem auto;}
+.author-bio{font-size:0.88rem;color:var(--mist);line-height:1.85;margin-top:0.75rem;}
+.author-links{display:flex;gap:0.8rem;justify-content:center;margin-top:1.75rem;flex-wrap:wrap;}
+
+footer{
+  padding:1.5rem 5rem;
+  border-top:1px solid rgba(139,26,26,0.1);
+  display:flex;justify-content:space-between;
+  font-size:0.72rem;color:rgba(154,128,112,0.35);letter-spacing:0.06em;
+}
+
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;}
+  .hero-cover{height:50vh;}
+  .hero-text{padding:3rem 1.5rem;}
+  .premise,.world,.magic-strip,.sylvans{grid-template-columns:1fr;padding:3rem 1.5rem;}
+  .nations{grid-template-columns:1fr 1fr;}
+  nav,footer{padding-left:1.5rem;padding-right:1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">Links of Light</span>
+  <ul class="nav-links">
+    <li><a href="#premise">The Book</a></li>
+    <li><a href="#world">World</a></li>
+    <li><a href="#magic">The Link</a></li>
+    <li><a href="#author">Author</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-label">A novel by Subhraman Sarkar</p>
+    <h1 class="hero-title">Links of Light</h1>
+    <div class="rule"></div>
+    <p class="hero-pull">
+      A bond that was never meant to exist.<br>
+      A light the world had forgotten.<br>
+      A question no one dares ask aloud.
+    </p>
+    <p class="hero-sub">
+      Rik was a smith's son. He knew his place — solid, unremarkable, safely outside the reach of legend. Then the Academy's caravan came to his village, and everything changed.
+    </p>
+    <div class="cta-row">
+      <a href="#premise" class="btn-primary">Read on</a>
+      <a href="#world" class="btn-ghost">Explore the world</a>
+    </div>
+  </div>
+  <div class="hero-cover">
+    <img src="images/lol_cover.webp"/>
+    <div class="cover-veil"></div>
+  </div>
+</section>
+
+<section class="premise" id="premise">
+  <div>
+    <p class="sec-label">About the book</p>
+    <h2 class="sec-title">The legend starts<br>in a smithy</h2>
+    <div class="body-text">
+      <p>When the Academy's testing caravan arrives at Rik's village, he discovers he has the gift — only to be rejected before he can be properly chosen. Someone interfered. He doesn't yet know who, or why.</p>
+      <p>Now he must reach the Academy alone to appeal his case. Taking a shortcut through the edge of the southern Sylvan forest, he meets a girl who should not be there. Their encounter lasts only a moment. The bond it leaves behind will last considerably longer.</p>
+      <p>By the time he understands what has formed between them, it is already too late to undo it. She says she didn't mean for it to happen. She says a great deal of things. Whether any of it is true — and whether the truth, when it finally surfaces, will be better or worse than the lie — is the question at the heart of everything that follows.</p>
+    </div>
+  </div>
+  <div class="aside-cards">
+    <div class="aside-card">
+      <p class="aside-card-label">A conspiracy already in motion</p>
+      <p class="aside-card-text">Rik's rejection wasn't random. Someone made a choice — and didn't expect him to keep walking anyway.</p>
+    </div>
+    <div class="aside-card">
+      <p class="aside-card-label">A forbidden bond</p>
+      <p class="aside-card-text">Human and Sylvan. User and Conduit. A pairing the world has no framework for — and no patience to tolerate.</p>
+    </div>
+    <div class="aside-card">
+      <p class="aside-card-label">Light, returned</p>
+      <p class="aside-card-text">Two elements vanished from the world long ago. Their return will not go unnoticed. The question is who notices first — and what they intend to do about it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="world" id="world">
+  <p class="sec-label">The world</p>
+  <h2 class="sec-title" style="font-size:1.5rem;margin-bottom:0.5rem;">Selthrine and beyond</h2>
+  <p style="font-size:0.85rem;color:var(--mist);max-width:60ch;line-height:1.75;">Nations here are not divided by armies alone — but by how they govern the bond between two people, and what they believe it is worth.</p>
+  <div class="nations">
+    <div class="nation">
+      <p class="nation-name">Selthrine</p>
+      <p class="nation-tag">Tradition &amp; restraint</p>
+      <p class="nation-desc">A regulated bonded society. The Academy trains Linked pairs here. Stability is the first law.</p>
+    </div>
+    <div class="nation">
+      <p class="nation-name">Sakrenz</p>
+      <p class="nation-tag">Order through control</p>
+      <p class="nation-desc">Bonding is rejected outright. Augmentation fills the gap. A place that would rather suppress a gift than risk what it might become.</p>
+    </div>
+    <div class="nation">
+      <p class="nation-name">Trense</p>
+      <p class="nation-tag">Power through excess</p>
+      <p class="nation-desc">Multiple bonds are permitted. Trense pursues strength without asking what instability costs — and wears it as a virtue.</p>
+    </div>
+    <div class="nation">
+      <p class="nation-name">Rhashin-Kash</p>
+      <p class="nation-tag">Identity through structure</p>
+      <p class="nation-desc">Selective bonding under strict social policy. A dominion remaking itself by controlling who may bond with whom.</p>
+    </div>
+  </div>
+</section>
+
+<section class="magic-strip" id="magic">
+  <div>
+    <p class="sec-label">The Link system</p>
+    <h2 class="sec-title">Two souls.<br>One current.</h2>
+    <div class="body-text">
+      <p>A Link is an elemental bond between two people — a <em>User</em> who shapes the energy, and a <em>Conduit</em> who carries it. It requires resonance, emotional and elemental alike.</p>
+      <p>The Academies exist to find those with the capacity, pair them carefully, and train them before the power exceeds what either can hold alone. Imbalance breaks things. And the old stories about what happens when a bond is forced — or weaponised — are not bedtime tales.</p>
+    </div>
+    <div class="pull-quote">"It listens in stillness." — oldest saying among Water-Linked masters</div>
+  </div>
+  <div>
+    <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--mist);margin-bottom:0.75rem;">The elements</p>
+    <div class="elements">
+      <div class="el"><span>Kair</span>Fire</div>
+      <div class="el"><span>Tuar</span>Water</div>
+      <div class="el"><span>Sael</span>Wind</div>
+      <div class="el"><span>Varn</span>Earth</div>
+      <div class="el lost"><span>Nyrel</span>Light · lost</div>
+      <div class="el lost"><span>Kreis</span>Darkness · lost</div>
+    </div>
+    <p style="font-size:0.78rem;color:rgba(154,128,112,0.5);margin-top:1.1rem;font-style:italic;line-height:1.7;">
+      Light and Darkness vanished after the Worldspell — an act of legend that sealed an invasion at the cost of those who cast it. Most believe those elements are gone for good.
+    </p>
+  </div>
+</section>
+
+<section class="sylvans" id="sylvans">
+  <div>
+    <p class="sec-label">The Sylvans</p>
+    <h2 class="sec-title">A people who think<br>in generations</h2>
+    <div class="body-text">
+      <p>The Sylvans withdrew from human affairs long ago — not out of weakness, but out of patience. They have watched kingdoms rise and collapse in the time it takes one of their children to reach adulthood.</p>
+      <p>They do not act quickly. They do not need to. Which is why, when an impossible bond forms at the edge of their forest, they do not look away. Slowly, deliberately, they begin to pay attention.</p>
+    </div>
+  </div>
+  <div class="sylvan-traits">
+    <div class="trait"><span class="trait-k">Lifespan</span><span class="trait-v">Several centuries</span></div>
+    <div class="trait"><span class="trait-k">Maturity</span><span class="trait-v">~100 years</span></div>
+    <div class="trait"><span class="trait-k">Social unit</span><span class="trait-v">Kinship clans, elder-led</span></div>
+    <div class="trait"><span class="trait-k">Magic tradition</span><span class="trait-v">Apprenticeship</span></div>
+    <div class="trait"><span class="trait-k">View of humans</span><span class="trait-v">Energetic. Short-sighted.</span></div>
+    <div class="trait"><span class="trait-k">Current stance</span><span class="trait-v">Withdrawn. Watching.</span></div>
+  </div>
+</section>
+
+<section class="author" id="author">
+  <div class="author-inner">
+    <p class="sec-label">The author</p>
+    <h2 class="author-name">&lt;Author&gt;</h2>
+    <div class="rule-center"></div>
+    <p class="author-bio">&lt;A few lines about who you are, where you write from, and what draws you to this kind of story. Keep it personal — readers want to know the person behind the world.&gt;</p>
+    <div class="author-links">
+      <a href="#" class="btn-ghost">Contact</a>
+      <a href="#" class="btn-ghost">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Links of Light · &lt;Author&gt;</span>
+  <span>A world built on bonds</span>
+</footer>
+
+</body>
+</html>
